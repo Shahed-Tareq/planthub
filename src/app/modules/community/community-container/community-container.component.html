@@ -1,0 +1,36 @@
+<section class="mt-24">
+    <div class="container">
+        <div class="grid grid-cols-5 gap-6 xxs:grid-cols-1 lg:grid-cols-5">
+            <div class="bg-white shadow-2xl h-screen  rounded-lg  flex-start  flex-col py-4 xxs:hidden lg:flex">
+                <h6 class="text-xl font-bold mb-4 text-center">{{"community.topPosts" | translate}}</h6>
+               <p *ngFor="let post of posts" class="text-sm px-4 mb-3 text-[#000000b3] hover:cursor-pointer hover:text-black"><a [routerLink]="[post.postId]">{{post.postTitel | textLength: 20}}</a></p>
+            </div>
+            <div class="bg-white col-span-3 scrollable-div shadow-black p-2 router-section h-screen overflow-auto">
+             <div class="header">
+                <div class="flex justify-center items-center inner-header">
+                    <a class=" p-2 active" routerLink="/community" routerLinkActive="active1" [routerLinkActiveOptions]="{ exact: true }"><i class="fa-solid fa-house"></i> {{"community.home" |translate}}</a>
+                    <a class=" p-2 active" routerLink="addPost" routerLinkActive="active1"><i class="fa-regular fa-pen-to-square"></i> {{"community.ask" | translate}}</a>
+                    <a class=" p-2 active" routerLink="myPost" routerLinkActive="active1"><i class="fa-solid fa-file"></i> {{"community.myPost" | translate}}</a>
+                </div>
+               <div class="my-4 p-4">
+                  <router-outlet></router-outlet>
+               </div>
+             </div>
+            </div>
+            <div class="bg-white shadow-2xl h-screen  rounded-lg   items-center flex-col py-4 xxs:hidden lg:flex">
+            <h6 class="text-xl font-bold mb-4">{{"community.plants" | translate}}</h6>
+            <ng-container *ngFor="let plant of plants.slice(0, 12); let odd=odd ; let even=even">
+                  <a class=" my-1 py-1 px-2 rounded-2xl cursor-pointer "
+                  [ngClass]="{
+                     'bg-[#cfcbcb]' : odd,
+                     'bg-[#cfcbcb6e]': even,
+                     'hover:bg-[#cfcbcb6e]':odd,
+                     'hover:bg-[#cfcbcb]':even
+                  }"
+                  > {{plant.name}}</a>
+            </ng-container>
+
+            </div>
+        </div>
+    </div>
+</section>

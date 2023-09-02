@@ -1,0 +1,12 @@
+<div class="w-full">
+    <button class="w-full bg-[#6cd66c] hover:bg-[#6cd66cde] py-2 px-7 rounded-full" 
+    (click)="buttonClicked()" [disabled]="isLoading">
+    <i class="pi pi-spin pi-spinner" style="font-size: 1rem; color: white;" *ngIf="isLoading"></i>
+    <span *ngIf="!isLoading">{{text}}</span>
+    </button>
+</div>
+
+
+
+
+  

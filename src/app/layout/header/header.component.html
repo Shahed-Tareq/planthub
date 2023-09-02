@@ -1,0 +1,54 @@
+<header class="bg-white">
+    <div class="container py-4">
+        <div class="justify-between items-center xxs:hidden md:flex">
+            <div>
+               <h6> PlantHub </h6>
+            </div>
+ <div>
+    <ul class="list-none flex justify-between items-center">
+        <ng-container *ngFor="let item of items">
+            <li class="mr-6 text-sm"  *ngIf="userType == item.userTyp"> <a [routerLink]="item.url" class="hover:text-green"> {{item.label }}</a></li>
+        </ng-container>
+        <li class="cursor-pointer mr-6" (click)="op.toggle($event)" *ngIf="userType != 3"> <i class="fa-solid fa-globe"></i> </li> 
+        <p-overlayPanel #op>
+    <ng-template pTemplate="content">
+       <ul>
+        <li class="flex justify-between items-center cursor-pointer  mb-2" (click)="useLanguage('ar' , 'rtl')"> <img src="../../../assets/images/sudia.jpg" class="w-6 h-5 rounded"> <span class="text-xs ms-1">{{'header.arabic' | translate}}</span> </li>
+        <li class="flex justify-between items-center cursor-pointer" (click)="useLanguage('en' , 'ltr')"> <img src="../../../assets/images/uk.jpg" class="w-6 h-5 rounded"><span class="text-xs ms-1">{{'header.english' | translate}}</span></li>
+       
+       </ul>
+    </ng-template>
+</p-overlayPanel>
+
+    </ul>
+ </div>
+ <div class="flex justify-start items-center">
+    <button *ngIf="!authService.loggedIn()" class="mr-4 bg-black text-white py-2 px-4 rounded-full me-2" [routerLink]="'/auth'" > {{'header.login'| translate }} </button>
+    <button *ngIf="!authService.loggedIn()" [routerLink]="'/auth/signup'">{{'header.signup'| translate }}</button>
+    <button *ngIf="authService.loggedIn()" class="mr-4 bg-black text-white py-2 px-4 rounded-full me-2" (click)="authService.logout()" > {{'header.logout'| translate }} </button>
+ </div>
+        </div>
+
+        <div class="xxs:flex justify-between items-center md:hidden">
+            <div>
+                <h6> PlantCare </h6>
+             </div>
+             <div>
+                <span (click)="showItem()"> <i class="fa-solid fa-bars"></i> </span>
+        
+             </div>
+        </div>
+    </div>
+</header>
+<div class="w-full bg-black  fixed top-14 z-40 py-6" *ngIf="showItemList"  [@slideDown]>
+    <ul>
+        <ng-container *ngFor="let item of items">
+            <li class="text-sm px-3 py-2"  *ngIf="userType == item.userTyp"> <a [routerLink]="item.url" class="hover:text-green text-white"> {{item.label}}</a></li>
+        </ng-container>
+       
+        <!-- <li  class=" text-sm px-3 py-2"> <a [routerLink]="'/about'" class="hover:text-green text-white"> {{'header.about'| translate }}</a></li>
+        <li  class="text-sm px-3 py-2"> <a [routerLink]="'/categories'" class="hover:text-green text-white"> {{'header.categories'| translate }}</a></li>
+        <li  class="text-sm px-3 py-2"> <a [routerLink]="'/ai'" class="hover:text-green text-white"> {{'header.upload'| translate }}</a></li>
+        <li  class="text-sm px-3 py-2"> <a class="hover:text-green text-white" [routerLink]="'/community'"> {{'header.community'| translate }}</a></li> -->
+    </ul>
+</div>

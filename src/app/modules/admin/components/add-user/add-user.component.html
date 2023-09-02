@@ -1,0 +1,53 @@
+  <div>
+    <form  [formGroup]="userForm">
+      <div class="flex justify-center items-center mb-2">
+        <label for="file-input" class="cursor-pointer">
+          <div
+            class="bg-zinc-200 w-[120px] h-[120px] rounded-full flex justify-center items-center"
+          >
+            <i
+              class="fa-solid fa-camera"
+              style="color: #afb1b6; font-size: 25px"
+              *ngIf="!hasImage"
+            ></i>
+            <img
+              [src]="userImage"
+              class="w-full h-full rounded-full object-cover"
+              *ngIf="hasImage"
+            />
+          </div>
+          <input
+            accept="image/png, image/jpg, image/jpeg"
+            type="file"
+            id="file-input"
+            class="hidden mr-3"
+            (change)="selectPhoto($event)"
+          />
+        </label>
+      </div>
+
+      <div class="mb-2 w-full">
+        <input pInputText type="text" class="p-inputtext-sm"  formControlName="fullName" placeholder="Full Name"  />
+      </div>
+      <div class="mb-2 w-full">
+        <input pInputText type="text" class="p-inputtext-sm"  formControlName="username" placeholder="Username"  />
+      </div>
+      <div class="mb-2 w-full">
+        <input pInputText type="text" class="p-inputtext-sm"  formControlName="phone" placeholder="Phone"  />
+      </div>
+      <div class="mb-2 w-full">
+        <p-dropdown [options]="userTypesArray" formControlName="userType" optionLabel="label" optionValue="id"></p-dropdown>
+      </div>
+      <div class="mb-2 w-full">
+        <input pInputText type="text" class="p-inputtext-sm"  formControlName="email" placeholder="Email"  />
+      </div>
+      <div class="mb-2 w-full">
+        <p-password  autocomplete="current-password" formControlName="password"  class="w-full placeholder:text-sm"  [feedback]="false"
+                    [toggleMask]="true"></p-password>
+      </div>
+      <div class="flex justify-center items-center">
+<app-button text="Add User" (clickButton)="addUser()"></app-button>
+      </div>
+    </form>
+   
+   </div>

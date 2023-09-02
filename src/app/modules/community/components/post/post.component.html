@@ -1,0 +1,22 @@
+
+    <div class="post rounded-md p-4 my-2 pb-2 cursor-pointer" (click)="viewPostDetails(post.postId)">
+        <div class="post-section pb-4">
+         <div class="flex flex-start justify-start items-center">
+             <img src="../../../../../assets/images/expert1.jpeg" class="rounded-full w-10 h-10 me-2">
+            <h6 class="font-semibold text-black">{{post.username}}</h6>
+         </div>
+         <div class="mt-2" >
+             <p class="text-black font-bold mb-1">{{post.postTitel}}</p>
+            <p class="text-[#000000b3] text-sm break-words">{{post.postContent | textLength: 100}}</p>
+         </div>
+         <div>
+            <button class="mt-8" (click)="likePost(post.postId , $event)">
+               <i class="fa-regular fa-heart"  *ngIf="post.isLiked== false"></i>
+           <i class="fa-solid fa-heart" style="color: #e2283a;" *ngIf="post.isLiked == true"></i>
+       </button>
+          <span class="ms-4" *ngIf="post.likeCount == 1">{{post.likeCount}} {{'community.like' | translate}}</span>
+          <span class="ms-4" *ngIf="post.likeCount > 1">{{post.likeCount}} {{'community.likes' | translate}}</span>
+          <span class="ms-4" *ngIf="post.commentCount == 1">{{post.commentCount}} {{'community.comment' | translate}}</span>
+          <span class="ms-4" *ngIf="post.commentCount > 1">{{post.commentCount}} {{'community.comments' | translate}}</span>
+      </div>
+    </div>

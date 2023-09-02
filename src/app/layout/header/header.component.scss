@@ -1,0 +1,13 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 20px;
+    z-index: 100; /* Set the z-index to ensure the header is above other elements */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+
+  .active{
+    color: green;
+  }

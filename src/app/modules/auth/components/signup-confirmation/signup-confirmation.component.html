@@ -1,0 +1,16 @@
+<div class="container flex justify-center items-center flex-col h-screen">
+    <div class="confirm-container py-7 px-9 w-[50%] flex justify-center flex-col gap-4 bg-[#d3d3d33d]"> 
+<div class="flex flex-col justify-center items-center">
+    <h1 class=" font-bold text-center text-2xl mb-4">{{'auth.verify' | translate}}</h1>
+    <h2 class="text-center  text-base"> {{'auth.verifyTitle' | translate}}</h2>
+</div>
+<div class="flex justify-center items-center  flex-col">
+    <p-inputNumber [(ngModel)]="code" mode="decimal" inputId="withoutgrouping" [useGrouping]="false"> </p-inputNumber>
+    <span class="text-xs text-[#e54f4f] mt-2" *ngIf="errorMessage">{{errorMessage}}</span>
+</div>
+<div class="flex justify-center items-center">
+    <app-button text="{{'community.submit' | translate}}" (clickButton)="confirmEmail()"></app-button>
+    </div>
+ </div>
+</div>
+

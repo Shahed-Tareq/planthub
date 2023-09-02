@@ -1,0 +1,33 @@
+<section class="mt-[20px]">
+    <div class="container">
+        <div class="flex md:justify-between xxs:justify-center items-center">
+            <div class="login-form p-6 md:w-[70%] xxs:w-full rounded">
+                <h1 class="mb-2 text-xl font-semibold">{{"auth.login" | translate}}</h1>
+                <span class="text-sm">{{"auth.noAccount" | translate}}</span> <a class="text-sm ml-2 text-green-600 font-medium" [routerLink]="'/auth/signup'">{{"auth.signup" | translate}}</a>
+                <form class="flex justify-start flex-col w-full mt-6" [formGroup]="loginForm">
+                    <div class="mb-3">
+                        <input formControlName="Email" type="email" pInputText placeholder="{{'auth.email' | translate}}" class="w-full mb-1 placeholder:text-sm" />
+                         <span class="text-xs text-[#e54f4f] ps-[14px]" *ngIf="loginForm.get('email')?.hasError('required') && (loginForm.get('email')?.touched || submitted) "> {{"general.required" | translate}}</span>
+                         <span class="text-xs text-[#e54f4f] ps-[14px]" *ngIf="errorMessage"> {{errorMessage}}</span>
+                    </div>
+                   <div class=" mb-3">
+                    <p-password  autocomplete="current-password" formControlName="Password"  class="w-full placeholder:text-sm"  [feedback]="false"
+                    [toggleMask]="true"></p-password>
+                    <span class="text-xs text-[#e54f4f] ps-[14px]" *ngIf="loginForm.get('password')?.hasError('required') && (loginForm.get('password')?.touched || submitted) ">{{"general.required" | translate}}</span>
+                   </div>
+                    <div class="flex justify-end items-end mt-0">
+                        <small><a class="text-green-600 font-medium" [routerLink]="'/auth/reset-password'">{{"auth.forget" | translate}}</a></small>
+                    </div>
+                
+                        <div class="my-4">
+                            <app-button text="{{'auth.login' | translate}}" (click)="login()" [isLoading]="isLoading"></app-button>
+                        </div>
+                     
+                </form>
+            </div>
+            <div class="image w-full md:block xxs:hidden ml-6" >
+<img src="../../../../assets/images/login.jpg" class="w-full">
+            </div>
+        </div>
+    </div>
+</section>

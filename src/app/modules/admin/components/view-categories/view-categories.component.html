@@ -1,0 +1,18 @@
+<div class="w-full">
+  <div class="flex justify-start items-center my-5">
+    <p-toast></p-toast>
+    <app-button
+      text="Add Category"
+      (clickButton)="showAddCategory()"
+    ></app-button>
+  </div>
+  <ag-grid-angular
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    class="ag-theme-alpine"
+    style="width: 100%; padding: 4px"
+    [gridOptions]="gridOptions"
+    [animateRows]="true"
+  >
+  </ag-grid-angular>
+</div>

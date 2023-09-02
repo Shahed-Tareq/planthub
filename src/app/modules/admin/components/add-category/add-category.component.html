@@ -1,0 +1,38 @@
+  <div class="w-full">
+    <form (ngSubmit)="onSubmit()" [formGroup]="addCategoryForm">
+      <span *ngIf="message">{{message}}</span>
+      <div class="flex justify-center items-center mb-2">
+        <label for="file-input" class="cursor-pointer">
+          <div
+            class="bg-zinc-200 w-[120px] h-[120px]  rounded-full flex justify-center items-center"
+          >
+        <i class="fa-solid fa-camera" style="color: #afb1b6; font-size: 25px;" *ngIf="!hasImage"></i> 
+          <img [src]="categoryImageEdit" class="w-full h-full  rounded-full object-cover" *ngIf="hasImage">
+          </div>
+          <input
+          accept="image/png, image/jpg, image/jpeg"
+          type="file"
+          id="file-input"
+          class="hidden mr-3"
+          (change)="selectPhoto($event)"
+          />
+        </label>
+      </div> 
+      <div class="mb-2">
+        <input pInputText type="text" class="p-inputtext-sm" formControlName="category_name" placeholder="English Category Name"  />
+      </div>
+      <div class="mb-2">
+        <input pInputText type="text" class="p-inputtext-sm"  formControlName="CategoryNameAr" placeholder="Arabic Category Name"  />
+      </div>
+      <div class="mb-2">
+        <textarea rows="5" cols="30" pInputTextarea formControlName="short_description" placeholder="English Description"></textarea>
+      </div>
+      <div class="mb-2">
+        <textarea rows="5" cols="30" pInputTextarea formControlName="DescriptionAr" placeholder="Arabic Description"></textarea>
+      </div>
+    <div class="flex justify-center items-center">
+      <app-button text="Add Category" (clickButton)="onSubmit()"></app-button>
+    </div>
+    </form>
+
+  </div>

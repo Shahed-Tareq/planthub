@@ -1,0 +1,18 @@
+<div class="login-form p-6 w-full rounded">
+    <div class="my-5">
+        <h2 class="my-1">{{'resetPassword.reset' | translate}}</h2>
+        <p class="text-xs">{{'resetPassword.sendEmail' | translate}}</p>
+        <p class="text-xs mt-1">{{'resetPassword.codeVerification' | translate}}</p>
+    </div>
+    
+    <form class="flex justify-start flex-col w-full mt-6" [formGroup]="codeForm">
+        <div class="mb-3 h-[60px]">
+            <input type="text" pInputText placeholder="{{ 'auth.code' | translate}}" formControlName="code" class="w-full placeholder:text-sm text-sm" />
+             <span class="text-xs text-[#e54f4f] ps-[14px]" *ngIf="codeForm.get('code')?.hasError('required') && (codeForm.get('code')?.touched || submitted) "> {{"general.required" | translate}}</span>
+            <span class="text-xs text-[#e54f4f] ps-[14px]" *ngIf="errorMessage"> {{errorMessage}}</span> 
+        </div>
+        <div class="my-4">
+            <app-button text="{{'community.submit' | translate}}" (click)="submitCode()" [isLoading]="loading"></app-button>
+        </div>
+        </form>
+  </div>

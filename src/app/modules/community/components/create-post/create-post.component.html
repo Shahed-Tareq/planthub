@@ -1,0 +1,36 @@
+<div>
+    <div >
+        <p class="mb-4">  {{"community.askNote" | translate}}<i class="fa-regular fa-pen-to-square ms-1"></i></p>
+        <form [formGroup]="postForm">
+          <div class="flex justify-center items-center mb-3 mt-3">
+            <label for="file-input" class="cursor-pointer">
+              <div
+                class="bg-zinc-200 w-[120px] h-[120px]  rounded-full flex justify-center items-center"
+              >
+            <i class="fa-solid fa-camera" style="color: #afb1b6; font-size: 25px;" *ngIf="!hasImage"></i> 
+              <img [src]="postShowImage" class="w-full h-full  rounded-full object-cover" *ngIf="hasImage">
+              </div>
+              <input
+              accept="image/png, image/jpg, image/jpeg"
+              type="file"
+              id="file-input"
+              class="hidden mr-3"
+              (change)="selectPhoto($event)"
+              />
+            </label>
+          </div>
+
+            <div>
+                <input formControlName="Title" type="text" pInputText placeholder="{{'community.postTitle' | translate}}" class="w-full mt-2 placeholder:text-sm" />
+            </div>
+            <div class="mt-4">
+                <textarea formControlName="Content" rows="6" cols="30" pInputTextarea  class="w-full mt-2 placeholder:text-sm" placeholder="{{'community.postDescription' | translate}}"></textarea>
+            </div>
+          
+            <div class="mt-4 flex justify-center items-center">
+                <app-button text="{{'community.submit' | translate}}" (clickButton)="addPost()"  [isLoading]="loading"></app-button>
+                
+              </div>
+        </form>
+    </div>
+</div>

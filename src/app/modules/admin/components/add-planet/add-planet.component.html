@@ -1,0 +1,72 @@
+<div>
+  <form  [formGroup]="addPlanetForm" class="w-full">
+    <div class="flex justify-center items-center mb-2">
+      <label for="file-input" class="cursor-pointer">
+        <div
+          class="bg-zinc-200 w-[120px] h-[120px] rounded-full flex justify-center items-center"
+        >
+          <i
+            class="fa-solid fa-camera"
+            style="color: #afb1b6; font-size: 25px"
+            *ngIf="!hasImage"
+          ></i>
+          <img
+            [src]="CategoryImage"
+            class="w-full h-full rounded-full object-cover"
+            *ngIf="hasImage"
+          />
+        </div>
+        <input
+          accept="image/png, image/jpg, image/jpeg"
+          type="file"
+          id="file-input"
+          class="hidden mr-3"
+          (change)="selectPhoto($event)"
+        />
+      </label>
+    </div>
+    <div class="w-full flex justify-between items-center gap-2">
+      <div  class="w-[50%]">
+        <div class="mb-2 w-full">
+          <input pInputText type="text" class="p-inputtext-sm"  formControlName="plantName" placeholder="English Plant Name"  />
+        </div>
+        <div class="mb-2 w-full">
+          <textarea rows="5" cols="30" pInputTextarea formControlName="shortDescription" placeholder="English Description"></textarea>
+        </div>
+        <div class="mb-2 w-full">
+          <textarea rows="5" cols="30" pInputTextarea formControlName="CareDetailsAr" placeholder="Care Details"></textarea>
+        </div>
+        <div class="mb-2 w-full">
+          <textarea rows="5" cols="30" pInputTextarea formControlName="MedicalBenefitAr" placeholder="Medical Benefit"></textarea>
+        </div>
+        <div class="mb-2 w-full">
+          <p-dropdown [options]="seasons" formControlName="season" optionLabel="name" optionValue="value"></p-dropdown>
+        </div>
+      </div>
+      <div class="w-[50%]" [dir]="'rtl'">
+        <div class="mb-2 w-full" >
+          <input pInputText type="text" class="p-inputtext-sm"  formControlName="PlantNameAr" placeholder="اسم النبتة"  />
+        </div>
+        <div class="mb-2 w-full">
+          <textarea rows="5" cols="30" pInputTextarea formControlName="DescriptionAr" placeholder="وصف"></textarea>
+        </div>
+        <div class="mb-2 w-full">
+          <textarea rows="5" cols="30" pInputTextarea formControlName="careDetails" placeholder="تفاصيل الرعاية"></textarea>
+        </div>
+        <div class="mb-2 w-full">
+          <textarea rows="5" cols="30" pInputTextarea formControlName="medicalBenefit" placeholder="الفوائد الطبية"></textarea>
+        </div>
+        <div class="mb-2 w-full">
+          <p-dropdown [options]="arabicSeasons" formControlName="SeasonAr" optionLabel="name" optionValue="value"></p-dropdown>
+        </div>
+      </div>
+
+    </div>
+    <div>
+      <p-dropdown [options]="categoriesArray" formControlName="catId" optionLabel="categoryName" optionValue="id"></p-dropdown>
+    </div>
+    <div class="flex justify-center items-center my-2">
+     <app-button text="Add Plant" (clickButton)="onSubmit()" ></app-button>
+    </div>
+  </form>
+</div>

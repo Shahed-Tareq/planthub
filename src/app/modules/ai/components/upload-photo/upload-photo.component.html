@@ -1,0 +1,41 @@
+<div class="container mt-24 ">
+ <div class="flex justify-center items-center">
+    <div>
+        <h1 class="md:text-2xl xxs:text-base font-bold">{{"upload.uploadPhoto" | translate}}</h1>
+        <p class="text-sm text-[#665f5f]">{{"upload.uploadIntro" | translate}}</p>
+        <p class="text-sm text-[#665f5f] mt-2">{{"upload.uploadIntroSecondSection" | translate}}</p>
+    </div>
+    <div class="image  h-[60vh] w-full xxs:hidden md:block">
+      <img src="../../../../assets/images/about-3.svg" class="w-full h-full object-fill">
+   </div>
+   </div>
+     <div class="mt-16">
+      <p class="md:text-xl xxs:text-base font-semibold">{{"upload.note" | translate}} </p>
+      <p class="text-sm text-[#665f5f]">{{"upload.noteDesc" | translate}}</p>
+    </div>
+     <div class="flex items-center justify-center flex-col mt-8">
+      <div>
+        <label for="file-input" class="cursor-pointer">
+          <div
+            class="bg-zinc-200 w-[186px] h-[186px]  rounded-full flex justify-center items-center"
+          >
+        <i class="fa-solid fa-camera" style="color: #afb1b6; font-size: 25px;" *ngIf="!hasImage"></i> 
+          <img [src]="plantImage" class="w-full h-full  rounded-full object-cover" *ngIf="hasImage">
+          </div>
+          <input
+          accept="image/png, image/jpg, image/jpeg"
+          type="file"
+          id="file-input"
+          class="hidden mr-3"
+          (change)="selectPhoto($event)"
+          />
+        </label>
+      </div>
+      <div class="mt-4">
+        <app-button text="{{'upload.view' | translate}}" (clickButton)="showPlantName()" *ngIf="!isExist"></app-button>
+        <p class="w-full bg-[#6cd66c]  py-2 px-7 rounded-full" *ngIf="isExist"> {{"upload.title" | translate}} <span> Orange </span></p>
+      </div>
+     
+     </div>
+ </div>
+ 

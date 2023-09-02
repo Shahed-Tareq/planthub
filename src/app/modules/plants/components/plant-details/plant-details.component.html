@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="grid md:grid-cols-3 xxs:grid-cols-1">
+        <div class="flex justify-center items-center mt-28 md:w-[320px] xxs:w-full md:h-[320px] xxs:h-[40vh]">
+            <ng-container  *ngIf="plant.plantImage">
+                <img [src]="'http://ayalilly-001-site1.atempurl.com/'+plant.plantImage" class="md:rounded-full xxs:rounded-sm md:w-full xxs:w-[60%] h-full object-cover">
+            </ng-container>
+         
+        </div>
+        <div class="col-span-2 flex justify-center items-center md:mt-28 xxs:mt-12">
+            
+            <div class="w-[70%] h-auto">
+                <div class="grid grid-cols-2">
+                    <h1 class="bg-[#ededed] px-5 py-2  border-[.6px] font-semibold">Name:</h1>
+                    <p class="bg-[#ededed] px-5 py-2 border-[.6px] text-sm">{{plant.plantName}}</p>
+                </div>
+                <div class="grid grid-cols-2">
+                    <h1 class="bg-[#d8d8d8]  px-5 py-2 border-[.6px] font-semibold">Medical Benefits: </h1>
+                    <p class="bg-[#d8d8d8]   px-5 py-2 border-[.6px] text-sm">{{plant.plantMedicalBenefit}}</p>
+                </div>
+                <div class="grid grid-cols-2">
+                    <h1 class="bg-[#ededed] px-5 py-2  border-[.6px] font-semibold">Short Description:</h1>
+                    <p class="bg-[#ededed] px-5 py-2 border-[.6px] text-sm">{{plant.plantDescription}} </p>
+                </div>
+                <div class="grid grid-cols-2">
+                    <h1 class="bg-[#d8d8d8] px-5 py-2 border-[.6px] font-semibold">Season: </h1>
+                    <p class="bg-[#d8d8d8]  px-5 py-2 border-[.6px] text-sm">{{plant.plantSeason}}</p>
+                </div>
+                <div class="grid grid-cols-2">
+                    <h1 class="bg-[#ededed]  px-5 py-2 border-[.6px] font-semibold">How can take care: </h1>
+                    <p class="bg-[#ededed] px-5 py-2 border-[.6px] text-sm">{{plant.plantCareDetails}}</p>
+                </div>
+                
+            </div>
+        </div>
+       
+    </div>
+</div>

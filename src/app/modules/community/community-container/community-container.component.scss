@@ -1,0 +1,18 @@
+.router-section{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.inner-header{
+  border-bottom: 1px solid #0000003b;
+  
+}
+
+.active{
+  border-right: 1px solid #0000003b;
+  border-left: 1px solid #0000003b;
+  border-top: 1px solid #0000003b;
+  
+}
+.active1{
+  border-top: none;
+  font-weight: 500;
+}

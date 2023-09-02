@@ -1,0 +1,44 @@
+<ng-container *ngIf="post;else loading">
+    <div>
+        <div class="flex flex-start justify-start items-center mb-4">
+                  <div>
+                      <img  [src]="'http://ayalilly-001-site1.atempurl.com/'+post.userImage"  class="rounded-full w-10 h-10 me-2 object-cover">
+                  </div>
+                  <div class="flex justify-start flex-col">
+                      <h6 class="font-semibold text-black">{{post.username}}</h6>
+                      <span class="text-xs">12-aug-2023</span>
+                  </div>
+              
+              </div>
+              <div class="mb-6" >
+                <p class="text-black font-bold mb-1">{{post.postTitel}}</p>
+               <p class="text-[#000000b3] text-sm break-words">{{post.postContent}}</p>
+    
+        </div>
+          <div class="w-full h-[250px] flex justify-center items-center">
+              <img [src]="'http://ayalilly-001-site1.atempurl.com/'+post.postImage"  class="w-auto h-full object-fill border border-solid">
+          </div>
+      
+        
+          <div class="flex justify-between items-center mt-6">
+            <input type="text" pInputText placeholder="{{'community.addComment' | translate}}" class="w-full mb-3 placeholder:text-sm" [(ngModel)]="content" />
+            <button class="mb-3 ms-1" (click)="addComment(post.postId)"><i class="fa-solid fa-location-arrow" style="font-size: 20px"></i></button>
+        </div>
+         <div *ngIf="post.comments.length>0" class="mt-6">
+            <h2 class="font-bold text-lg">{{'community.comments' | translate}}</h2>
+            <ng-container *ngFor="let comment of post.comments">
+                <div class="flex flex-start justify-start items-center mt-4">
+                    <img [src]="'http://ayalilly-001-site1.atempurl.com/'+comment.commentUserImage" class="rounded-full w-10 h-10 me-2 object-cover">
+                   <div>
+                    <h6 class="font-semibold text-black text-sm">{{comment.commentUserName}}</h6>
+                   <p class="text-sm text-[#000000b3]">{{comment.commentContent}}</p>
+                   </div>
+                </div>
+         </ng-container>
+         </div>
+      </div>
+</ng-container>
+
+<ng-template #loading>
+    <app-loader></app-loader>
+    </ng-template>

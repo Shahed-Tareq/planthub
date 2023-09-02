@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~primeng/resources/primeng.min.css';
+@import '~primeicons/primeicons.css';
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "ag-grid-community/styles/ag-grid.css";
+@import "ag-grid-community/styles/ag-theme-alpine.css";
+// tailwind css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+
+body{
+    font-family: var(--font-family);
+   min-height: 100vh;
+}
+
+
+.p-inputtext{
+    width: 100% !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    
+}
+.p-password{
+    width: 100% !important;
+}
+
+.p-dropdown
+{
+    width: 100% !important;
+}
+
+@media (max-width : 700px){
+    .post-popup{
+        width: 100% !important;
+    }
+}
+
+/* WebKit (Safari, Chrome) */
+input:-webkit-autofill {
+    /* Reset the background color */
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    background-color: transparent !important;
+  }
+  
+  /* Mozilla Firefox */
+  input:-moz-autofill {
+    /* Reset the background color */
+    background-color: transparent !important;
+  }
+
+  .header-class{
+color:  #6cd66c !important;
+  }
+  .addCategory{
+    width: 50% !important;
+  }

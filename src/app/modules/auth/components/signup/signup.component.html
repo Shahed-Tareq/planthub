@@ -1,0 +1,66 @@
+<section class="mt-[20px]">
+    <div class="container">
+        <div class="flex md:justify-between xxs:justify-center items-center">
+            <div class="image w-full mr-6 md:block xxs:hidden" >
+                <img src="../../../../assets/images/login.jpg" class="w-full">
+            </div>
+            <div class="login-form p-4 md:w-[70%] xxs:w-full rounded">
+                <h1 class="mb-2 text-xl font-semibold">{{"auth.signup" | translate}}</h1>
+                <span class="text-sm">{{"auth.haveAccount"  | translate}}</span> <a class="text-sm ml-2 text-green-600 font-medium" [routerLink]="'/auth'">{{"auth.login" | translate}}</a>
+                <form class="flex justify-start flex-col w-full mt-4" [formGroup]="signupForm">
+                    <div class="flex justify-center items-center mb-2">
+                        <label for="file-input" class="cursor-pointer">
+                          <div
+                            class="bg-zinc-200 w-[120px] h-[120px]  rounded-full flex justify-center items-center"
+                          >
+                        <i class="fa-solid fa-camera" style="color: #afb1b6; font-size: 25px;" *ngIf="!hasImage"></i> 
+                          <img [src]="plantImage" class="w-full h-full  rounded-full object-cover" *ngIf="hasImage">
+                          </div>
+                          <input
+                          accept="image/png, image/jpg, image/jpeg"
+                          type="file"
+                          id="file-input"
+                          class="hidden mr-3"
+                          (change)="selectPhoto($event)"
+                          />
+                        </label>
+                      </div>
+
+                    <div class="mb-2  h-[60px]">
+                        <input type="text" pInputText placeholder="{{ 'auth.name' | translate}}" formControlName="name" class="w-full placeholder:text-sm text-sm" />
+                        <span class="text-xs text-[#e54f4f] ps-[14px]" *ngIf="signupForm.get('name')?.hasError('required') && (signupForm.get('name')?.touched || submitted)"> {{"general.required" | translate}}</span>
+                    </div>
+                    <div class="mb-2  h-[60px]">
+                       <input type="text" pInputText placeholder="{{ 'auth.userName' | translate}}"formControlName="userName" class="w-full placeholder:text-sm text-sm" />
+                       <span class="text-xs text-[#e54f4f] ps-[14px]" *ngIf="signupForm.get('userName')?.hasError('required') && (signupForm.get('userName')?.touched || submitted)"> {{"general.required" | translate}}</span>
+                    </div>
+                    <div class="mb-2 h-[60px]">
+                        <input type="email" pInputText placeholder="{{ 'auth.email' | translate}}" class="w-fullplaceholder:text-sm text-sm" formControlName="email"/>
+                        <span class="text-xs text-[#e54f4f] ps-[14px]" *ngIf="signupForm.get('email')?.hasError('required') && (signupForm.get('email')?.touched || submitted)"> {{"general.required" | translate}}</span>
+                        <span class="text-xs text-[#e54f4f] ps-[14px]" *ngIf="signupForm.get('email')?.hasError('pattern') && (signupForm.get('email')?.touched || submitted)"> {{"general.pattern" | translate}}</span>
+                    </div>
+                    <div class="mb-2  h-[60px]">
+                        <input type="text" pInputText placeholder="{{'auth.phoneNo' | translate}}" class="w-full placeholder:text-sm text-sm" formControlName="phone"/>
+                        <span class="text-xs text-[#e54f4f] ps-[14px]" *ngIf="signupForm.get('phone')?.hasError('required') && (signupForm.get('phone')?.touched || submitted)"> {{"general.required" | translate}}</span>
+                        <span class="text-xs text-[#e54f4f] ps-[14px]" *ngIf="signupForm.get('phone')?.hasError('pattern') && (signupForm.get('phone')?.touched || submitted)"> {{"general.pattern" | translate}}</span>
+                    </div>
+                    <div class="mb-2 h-[60px]">
+                      <p-password 
+                        [feedback]="false"
+          [toggleMask]="true" class="w-full  placeholder:text-sm text-sm py-2" formControlName="password"></p-password>
+                      <span class="text-xs text-[#e54f4f] ps-[14px]" *ngIf="signupForm.get('password')?.hasError('required') && (signupForm.get('password')?.touched || submitted)"> {{"general.required" | translate}}</span>
+                        <span class="text-xs text-[#e54f4f] ps-[14px]" *ngIf="signupForm.get('password')?.hasError('pattern') && (signupForm.get('password')?.touched || submitted)"> {{"general.pattern" | translate}}</span>
+                    </div>
+                   
+        
+                 
+                 
+                    <div class="my-4">
+                        <app-button text="{{'auth.signup' | translate}}" (clickButton)="signup()" [isLoading]="loading"></app-button>
+                        </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>

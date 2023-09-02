@@ -1,0 +1,65 @@
+<section class="mt-[80px] ">
+<div class="container  flex justify-center items-center flex-col">
+<div class="img-container md:w-[600px] xxs:w-[400px] h-[350px] ">
+<img src="../../../../assets/images/about-1-intro.jpg" class="w-full h-full border image-preview object-fill" id="preview">
+</div>
+<div class="image-prev mt-3 text-center h-[150px] md:w-[600px] xxs:w-[400px]">
+    <div class="image-slide active h-full">
+        <img src="../../../../assets/images/about-1-intro.jpg" class="h-full w-full object-fill" appChangeImage>
+    </div>
+    <div class="image-slide h-full">
+        <img src="../../../../assets/images/about-2-intro.jpg" class="h-full w-full object-fil" appChangeImage>
+    </div>
+    <div class="image-slide h-full">
+        <img src="../../../../assets/images/about-3-intro.jpg" class="h-full w-full object-fil" appChangeImage>
+    </div>
+    <div class="image-slide h-full">
+        <img src="../../../../assets/images/about-4-intro.jpg" class="h-full w-full object-fil"  appChangeImage>
+    </div>
+</div>
+
+
+        <h1 class="font-semibold text-black mt-8 md:text-4xl xxs:text-xl"> {{"about.welcome" | translate}}</h1>
+        <p class="mt-4 text-[#544e4ed4] text-base"> {{"about.intro" | translate}}</p>
+        <div class="flex md:justify-between xxs:justify-center items-center container my-5">
+         <div class="" data-aos="zoom-in">
+            <h1 class=" font-semibold text-black md:my-[30px] xxs:my-5 md:text-3xl xxs:text-xl ">{{"about.fService" | translate}}</h1>
+        <p class="w-[80%] text-[#544e4ed4] text-base">{{"about.fServiceDescription" | translate}}</p>
+        <!-- <button class="text-sm bg-[#57C84D] rounded-sm py-2 px-4 hover:bg-[#57C84D80] mt-8">{{"about.browse" | translate}}</button>  -->
+       <div class="flex justify-start items-center mt-2">
+        <app-button text="{{'about.browse' | translate}}"></app-button>
+       </div>
+         </div>
+         <div class="image h-[80vh] w-full xxs:hidden md:block" data-aos="zoom-in">
+            <img src="../../../../assets/images/about-2.jpg" class="w-full h-full object-fill">
+         </div>
+        </div>
+    
+        <div class="flex md:justify-between xxs:justify-center items-center my-5">
+            <div class="image h-[80vh] w-full xxs:hidden md:block" data-aos="zoom-in">
+                <img src="../../../../assets/images/about-3.jpg" class="w-full h-full object-fill">
+             </div>
+         <div class="" data-aos="zoom-in">
+            <h1 class="font-semibold text-black md:my-[30px] xxs:my-5 md:text-3xl xxs:text-xl"> {{"about.sService" | translate}}</h1>
+        <p class="w-[80%] text-[#544e4ed4] text-base">{{"about.sServiceDescription" | translate}}</p>
+        <div class="flex justify-start items-center mt-2">
+        <app-button text="{{'about.join' | translate}}"></app-button>
+    </div>
+         </div>
+         
+        </div>
+        <div class="flex md:justify-between xxs:justify-center items-center my-5">
+           
+            <div class="" data-aos="zoom-in-down">
+               <h1 class="font-semibold text-black md:my-[30px] xxs:my-5 md:text-3xl xxs:text-xl"> {{"about.tService" | translate}}</h1>
+           <p class="w-[80%] text-[#544e4ed4] text-base">{{"about.tServiceDescription" | translate}}</p>
+           <div class="flex justify-start items-center mt-2">
+           <app-button text="{{'about.start' | translate}}"></app-button>
+           </div>
+            </div>
+            <div class="image h-[80vh] w-full xxs:hidden md:block" data-aos="zoom-in-down">
+               <img src="../../../../assets/images/about-3.svg" class="w-full h-full object-fill">
+            </div>
+           </div>
+    </div>
+</section>

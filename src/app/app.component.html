@@ -1,0 +1,4 @@
+<div [dir]="langService.direction">
+  <app-header *ngIf="headerState$ | async"></app-header>
+  <router-outlet> </router-outlet>
+</div>
