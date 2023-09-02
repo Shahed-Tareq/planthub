@@ -1,0 +1,99 @@
+{
+    "header":{
+      "home": "Home",
+      "about": "About",
+      "categories":"Categories",
+      "upload":"Upload",
+      "community":"Community",
+      "login": "Login",
+      "signup":"Sign Up",
+      "arabic":"Arabic",
+      "english":"English",
+      "logout":"Logout",
+     "plants":"Plants",
+     "users":"Users",
+     "favorite":"favorite"
+}, 
+"about":{
+  "welcome": "Welcome to our website!",
+  "intro":"We are dedicated to providing you with a comprehensive platform that serves as your go-to resource for all things related to plants.<br> Our mission is to empower plant enthusiasts, whether you're a seasoned gardener or just starting out, by providing valuable information, fostering a thriving community, and offering an innovative image recognition feature to help you identify plants.",
+  "fService": "Provide you with information about plants and many details",
+  "fServiceDescription":"We are committed to providing you with an enriching experience, combining information, community, and cutting-edge technology. So whether you're looking to expand your plant collection",
+  "browse":"Browse now",
+  "sService":"Provide you with community to ask any question",
+  "sServiceDescription" : "We have built a vibrant space where plant enthusiasts can connect, share their experiences, ask questions, and learn from one another",
+  "join":"Join now",
+  "tService":"Provide the name of a plant by upload its image.",
+  "tServiceDescription":"If you come across an unfamiliar plant and are eager to learn more about it, simply upload an image, and our advanced image recognition technology will analyze it to identify the plant species for you.",
+  "start": "Start"
+} ,
+"categories":{
+  "search":"Search"
+},
+"upload":{
+  "uploadPhoto": "Upload Photo",
+  "uploadIntro": "Contribute to Plant Knowledge: Upload Photos for Identification and Health Assessment",
+  "uploadIntroSecondSection": "Capture the Beauty: Help us identify the diverse plant species around us by uploading photos of leaves, flowers, or the entire plant. Each snapshot you share brings us closer to understanding and preserving our natural environment.",
+  "note": "Click here to upload your photo , please upload clear photo",
+  "noteDesc" : "to ensure accurate identification and assessment, please provide well-lit, high-resolution images. Include close-ups of any unusual spots, discolorations, or patterns on the leaves or stems. Your attention to detail makes a significant impact on the analysis",
+  "view":"View Result",
+  "title" :"Plant Name is:"
+} , 
+"auth":{
+  "login":"Login",
+  "noAccount":"Haven't an account ?",
+  "signup":"Sign up",
+  "forget" :" Forget Password ?",
+  "email" :"Email",
+  "haveAccount" :"Already have an account ?",
+  "name":"Name",
+  "userName":"Username",
+  "userType" : "User Type" ,
+  "phoneNo" : "Phone Number",
+  "password":"Password",
+  "code":"Code",
+  "verify" :"Enter Verification Code",
+  "verifyTitle":"We've sent a verification code to your email. Please enter it below:"
+},
+"community":{
+  "topPosts" :"Top Posts",
+  "home" :"Home",
+  "ask" :"Ask",
+  "myPost" :"My posts",
+  "plants" :"Plants",
+  "askNote" : "Don't hesitate to share your question with us , you will find your answers ",
+  "postTitle" :"Post Title",
+  "postDescription" :"Post Description",
+  "comments":"Comments",
+  "submit" :"Submit",
+  "like" :"Like",
+  "likes" :"Likes",
+  "addComment" :"Add Comment",
+  "comment" :"Comment"
+} , 
+"home":{
+  "plantCare" :"Plant Hub ",
+  "intro" :"Welcome to PlantHub, the go-to website for all your indoor plant needs! Whether you're a seasoned plant enthusiast or just starting your green journey, PlantHub is here to provide you with a comprehensive resource to help you choose, care for, and thrive with your indoor plants.",
+  "experts" :" Our Experts",
+  "contact" :"Contact Us",
+  "contactNote": "If you have any suggestion , we will be happy to hear your suggestions",
+  "suggestion" :"Suggestions",
+  "send" :"Send",
+  "view":"View More",
+  "viewBtn" :"View"
+},
+"general":{
+  "required" :" This field is required",
+  "pattern" :"Please enter valid format",
+  "errorCode" : "Invalid Code",
+  "confirm" : "MisMatch Confirmation",
+  "searchTitle" : "Easily find exactly what you're looking for by searching through our diverse range of categories, ensuring the best results for your needs"
+},
+"resetPassword":{
+  "reset" : "Reset Password",
+  "sendEmail":"We've sent a reset code to your email for password recovery.",
+  "codeVerification":"Please check your inbox for further instructions on resetting your password",
+  "submitEmail":"To reset your password, please enter your registered email address.",
+  "submitCode" :"Your code has been successfully submitted. Please enter your new password."
+}
+}
